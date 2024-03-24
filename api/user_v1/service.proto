@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package user_v1;
+
+option go_package = "github.com/DaniilShd/gRPCExample/pkg/user_v1;user_v1";
+
+message UserInfo {
+    int64 id = 1;
+    string name = 2; 
+    bool is_human = 3;
+}
