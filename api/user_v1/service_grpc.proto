@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package user_v1;
+
+option go_package = "github.com/DaniilShd/gRPCExample/pkg/user_v1;user_v1";
+
+service SendMessageToTelegram {
+    rpc Send(SendRequest) returns (SendResponse);
+}
+
+message TelegramMessage {
+    int64 id = 1;
+    int64 chantID = 2;
+    string text = 3; 
+}
+
+message SendRequest {
+    TelegramMessage messageInfo = 1;
+}
+
+message SendResponse {
+    bool check = 1;
+}
